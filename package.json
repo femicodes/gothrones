@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "bin": {
+    "GOT": "bin/stark"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +14,11 @@
   "license": "ISC",
   "devDependencies": {
     "chalk": "^2.4.2",
-    "got": "^9.6.0",
     "ora": "^3.2.0"
+  },
+  "dependencies": {
+    "asoiaf-api": "^1.0.1",
+    "axios": "^0.18.0",
+    "minimist": "^1.2.0"
   }
 }
