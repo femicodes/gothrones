@@ -3,7 +3,7 @@
 via [npm](https://www.npmjs.com/) :package:
 
 ```
-npm install --g GOT
+npm install --g gothrones
 ```
 
 ## Usage
@@ -20,10 +20,10 @@ Commands:
   random-house|rh         Get a random house
 
   Examples:
-  GOT name 'jon snow'
-  GOT house 'house stark of winterfell'
-  GOT random-character
-  GOT random-house
+  gothrones name 'jon snow'
+  gothrones house 'house stark of winterfell'
+  gothrones random-character
+  gothrones random-house
 ```
 
 ## Thanks:
