@@ -2,6 +2,7 @@
   "name": "GOT",
   "version": "1.0.0",
   "description": "Game of thrones wiki on the terminal",
+  "homepage": "https://github.com/femicodes/GOT-terminal",
   "main": "app.js",
   "preferGlobal": true,
   "bin": "./app.js",
