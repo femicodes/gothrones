@@ -1,24 +1,20 @@
 {
-  "name": "got-terminal",
+  "name": "GOT",
   "version": "1.0.0",
-  "description": "",
+  "description": "Game of thrones wiki on the terminal",
   "main": "app.js",
-  "bin": {
-    "GOT": "bin/stark"
-  },
+  "preferGlobal": true,
+  "bin": "./app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Oluwafemi Adeniji",
   "license": "ISC",
-  "devDependencies": {
-    "chalk": "^2.4.2",
-    "ora": "^3.2.0"
-  },
   "dependencies": {
-    "asoiaf-api": "^1.0.1",
     "axios": "^0.18.0",
-    "minimist": "^1.2.0"
+    "chalk": "^2.4.2",
+    "commander": "^2.19.0",
+    "inquirer": "^6.2.2"
   }
 }

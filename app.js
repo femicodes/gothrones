@@ -1,36 +1,49 @@
-const minimist = require('minimist');
+#!/usr/bin/env node
+
+const program = require('commander');
 const chalk = require('chalk');
 
-const err = chalk.bold.bgRed;
+const {
+    getCharacterByName,
+    getHouseByName,
+    getRandomCharacter,
+    getRandomHouse
+} = require('./api');
 
-module.exports = () => {
-    const args = minimist(process.argv.slice(2))
-    let cmd = args._[0] || 'help';
+program
+    .version('1.0.0')
+    .description(chalk.black.bgBlue('GAME OF THRONES WIKI'))
 
-    if (args.version || args.v) {
-        cmd = 'version'
-    }
+program
+    .command('name <characterName>')
+    .alias('c')
+    .description('Search for a particular character')
+    .action((characterName) => {
+        getCharacterByName(characterName);
+    })
 
-    if (args.help || args.h) {
-        cmd = 'help'
-    }
+program
+    .command('house <houseName>')
+    .alias('h')
+    .description('Search for a particular house')
+    .action((houseName) => {
+        getHouseByName(houseName);
+    })
 
-    switch (cmd) {
-        case 'name':
-            require('./cmds/name')(args)
-            break
+program
+    .command('random-character')
+    .alias('rc')
+    .description('Get a random character')
+    .action(() => {
+        getRandomCharacter();
+    })
 
-        case 'version':
-            require('./cmds/version')(args)
-            break
+program
+    .command('random-house')
+    .alias('rh')
+    .description('Get a random house')
+    .action(() => {
+        getRandomHouse();
+    })
 
-        case 'help':
-            require('./cmds/help')(args)
-            break
-
-        default:
-            console.error(`"${err(cmd)}" is not a valid command!`)
-            break
-    }
-
-}
+program.parse(process.argv);
