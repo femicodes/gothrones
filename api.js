@@ -76,7 +76,7 @@ let getHouseByID = (param) => {
 //getCharacterByName('sansa stark');
 
 let getRandomCharacter = () => {
-    let index = Math.floor(Math.random() * 101)
+    let index = Math.floor(Math.random() * 2138)
     return getCharacterByID(index);
 }
 
